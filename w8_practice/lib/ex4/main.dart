@@ -26,9 +26,9 @@ class _JokelistState extends State<JokeList> {
   void onFavoriteClick(int index) {
     setState(() {
       if (favouriteIndex == index) {
-        favouriteIndex = null; // Unfavorite if already favorited
+        favouriteIndex = null; 
       } else {
-        favouriteIndex = index; // Set the new favorite index
+        favouriteIndex = index; 
       }
     });
   }
@@ -40,9 +40,9 @@ class _JokelistState extends State<JokeList> {
         backgroundColor: appColor,
         title: const Text("Favorite Jokes"),
       ),
-      body: ListView( // change: was Column, ListView makes it scrollable
+      body: ListView(
         children: [
-          for (var i = 0; i < jokes.length; i++) // change: loop over jokes
+          for (var i = 0; i < jokes.length; i++) 
             FavoriteCard(
               title: jokes[i].title,
               description: jokes[i].description,
@@ -96,10 +96,10 @@ class FavoriteCard extends StatelessWidget {
             ),
           ),
           IconButton(
-              onPressed: onFavoriteClick, // change: calls the parent function
+              onPressed: onFavoriteClick, 
               icon: Icon(
-                isFavorite ? Icons.favorite : Icons.favorite_border, // change
-                color: isFavorite ? Colors.red : Colors.grey, // change
+                isFavorite ? Icons.favorite : Icons.favorite_border, 
+                color: isFavorite ? Colors.red : Colors.grey, 
               ))
         ],
       ),
